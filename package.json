@@ -1,0 +1,32 @@
+{
+  "name": "messenger-bot",
+  "version": "1.0.0",
+  "description": "Messenger Platform QuickStart Demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vernon99/messenger-quick-start.git"
+  },
+  "keywords": [
+    "messenger",
+    "bot",
+    "quickstart"
+  ],
+  "author": "Mikhail Larionov <mlarionov@fb.com>",
+  "license": "MIT",
+  "homepage": "https://developers.facebook.com/docs/messenger-platform/guides/quick-start",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "lodash": "^4.17.10",
+    "request": "^2.72.0",
+    "node-google-translate-skidz": "^1.1.2",
+    "translate-google-cn": "^1.0.4",
+    "translation-google": "^0.2.1",
+    "node-google-translate-china": "^1.0.2",
+    "async": "^3.1.0"
+  }
+}
