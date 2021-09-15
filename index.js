@@ -233,14 +233,14 @@ break;
       typing(senderID);
       // sendTextMessage(senderID, t);
       // sendMessage(senderID, x);
-       translatei({
-  text: messageText,
-  source:'auto',
-  target:'en'
-}, function (result){
-  var lol = result.translation;
-  sendTextMessage(senderID, lol)
-})
+//        translatei({
+//   text: messageText,
+//   source:'auto',
+//   target:'en'
+// }, function (result){
+//   var lol = result.translation;
+//   sendTextMessage(senderID, lol)
+// })
  translate({
   text: messageText,
   source:'auto',
