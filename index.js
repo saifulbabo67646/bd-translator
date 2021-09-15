@@ -229,27 +229,27 @@ break;
       ///////////////////////////////////////
       // Answer message with translate language
       /////////////////////////////////////////
-//        case(messageText):
-//       typing(senderID);
-//       // sendTextMessage(senderID, t);
-//       // sendMessage(senderID, x);
-//        translatei({
-//   text: messageText,
-//   source:'auto',
-//   target:'en'
-// }, function (result){
-//   var lol = result.translation;
-//   sendTextMessage(senderID, lol)
-// })
-//  translate({
-//   text: messageText,
-//   source:'auto',
-//   target:'bn'
-// }, function (result){
-//   var lol2 = result.translation;
-//   sendTextMessage(senderID, lol2)
-// })
-//       break;
+       case(messageText):
+      typing(senderID);
+      // sendTextMessage(senderID, t);
+      // sendMessage(senderID, x);
+       translatei({
+  text: messageText,
+  source:'auto',
+  target:'en'
+}, function (result){
+  var lol = result.translation;
+  sendTextMessage(senderID, lol)
+})
+ translate({
+  text: messageText,
+  source:'auto',
+  target:'bn'
+}, function (result){
+  var lol2 = result.translation;
+  sendTextMessage(senderID, lol2)
+})
+      break;
 
         
       default:
