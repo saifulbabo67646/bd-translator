@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Messenger Platform QuickStart Demo",
   "main": "index.js",
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "node index.js"
   },
