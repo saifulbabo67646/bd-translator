@@ -98,72 +98,7 @@ function receivedMessage(event) {
 
   var messageText = message.text;
   var messageAttachments = message.attachments;
-
- // translates( (messageText), { to: 'en' }).then(res => {
-// console.log(res.text);
- // var t = res.text;
-  //translate('i have a pen', { to: 'bn' }).then(res => {
-  //console.log(res.text);
-  // var x = res.text;
-
- /* 
- var n='i have a pen';
-  translate (n,{to:'bn'}).then(res=>{
-    console.log(res.text);
-  })
-  */
-  
-  //translate( messageText , 'en').then(res => {
-  //console.log(res.dist)
-  //  var t = res.dist;
-  //  translate( messageText , 'bn').then(res => {
-//  console.log(res.dist)
- //     var x = res.dist;
-      
-  //translate('Ik spreek Engels', {to: 'en'}).then(res => {
-  //  console.log(res.text);
- // })
-  
-/*  translates({
-text: messageText,
-    source: 'auto',
-    target: 'en'
-}, function(result) {
-var x =result.translation;
-*/
-  //  translatei(messageText, {to: 'en'}).then(res => {
-  //   console.log(res.text);
-
-
-////////////////////////////
-/// One of my active method
-////////////////////////////
-//   translatei({
-//   text: messageText,
-//   source:'auto',
-//   target:'en'
-// }, function (result){
-    //=> 这是Google翻译
-   
-    //=> en
-// })
-//   translatei(messageText, { from: 'auto', to: 'en' })
-
-//   .then(({ text }) =>{ console.log(text)
-// var t = result.translation;
-//   console.log(result.translation);
-  
-// translate({
-//   text: messageText,
-//   source:'auto',
-//   target:'bn'
-// }, function (result){
-//   var x= result.translation;
-//   console.log(result.translation);
-  
   if (messageText) {
-
-  
     // If we receive a text message, check to see if it matches a keyword
     // and send back the template example. Otherwise, just echo the text we received.
     switch (messageText) {
@@ -184,53 +119,16 @@ break;
          broadcastButton();
          console.log('switch case bradcast_button');
          break;
-    //  case 'sib':{
-    //     async function executeSequentially() {
-    //       try {
-    //         await sendTextMessage(senderID, "meow 1");
-    //         await sendTextMessage(senderID, "meow 2");
-    //         await sendTextMessage(senderID, "meow 3");
-    //         await sendTextMessage(senderID, "meow 4");
-    //       } catch (err) {
-    //         console.log("error");
-    //       }
-    //    }
-     
-    //   executeSequentially()
-    //   }
-    //   break;  
-      //  case ( messageText):{
-// async function executeSequentially() {
-
-//          try {
-
-//            await typing(senderID );
-
-//           await sendTextMessage(senderID, t);
-
-//           await sendMessage(senderID, x);
-
-//          } catch (err) {
-
-//            console.log("error");
-
-//          }
-
-//       }
-//      executeSequentially()
-//    } break; 
-   
-      // case (messageText):
-      // typing(senderID );
-      //  sendTextMessage1(senderID,t);
-      //  sendMessage(senderID,x);
-      //  // sendTextMessage(senderID,"Hey what's up?" );
-      //  break;
       ///////////////////////////////////////
       // Answer message with translate language
       /////////////////////////////////////////
-       case(messageText):
+      case(messageText):
       typing(senderID);
+      sendTranslation(messageText, 'bn', senderID);
+      sendTranslation(messageText, 'en', senderID);
+      break;
+      //  case(messageText):
+      // typing(senderID);
       // sendTextMessage(senderID, t);
       // sendMessage(senderID, x);
 //        translatei({
@@ -241,15 +139,15 @@ break;
 //   var lol = result.translation;
 //   sendTextMessage(senderID, lol)
 // })
- translate({
-  text: messageText,
-  source:'auto',
-  target:'bn'
-}, function (result){
-  var lol2 = result.translation;
-  sendTextMessage(senderID, lol2)
-})
-      break;
+//  translate({
+//   text: messageText,
+//   source:'auto',
+//   target:'bn'
+// }, function (result){
+//   var lol2 = result.translation;
+//   sendTextMessage(senderID, lol2)
+// })
+//       break;
 
         
       default:
@@ -326,6 +224,16 @@ function sendTextMessage(recipientId, messageText) {
   };
 
   callSendAPI(messageData);
+}
+function sendTranslation(text, target, senderID){
+   translate({
+  text: text,
+  source:'auto',
+  target: target
+}, function (result){
+  var translateRes = result.translation;
+  sendTextMessage(senderID, translateRes)
+})
 }
 function sendTextMessage1(recipientId,t) {
   var messageData = {
