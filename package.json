@@ -22,11 +22,8 @@
     "body-parser": "*",
     "express": "*",
     "lodash": "^4.17.10",
-    "request": "^2.72.0",
     "node-google-translate-skidz": "^1.1.2",
-    "translate-google-cn": "^1.0.4",
-    "translation-google": "^0.2.1",
-    "node-google-translate-china": "^1.0.2",
-    "async": "^3.1.0"
+    "request": "^2.72.0",
+    "translation-google": "^0.2.1"
   }
 }

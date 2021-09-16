@@ -7,19 +7,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const path = require('path');
 const translate = require('node-google-translate-skidz');
-// const translatei = require('translate-google-cn');
 // const translatei = require('translation-google');
-var translatei = require('node-google-translate-china');
-// var async = require('async');
-//const translates = require('@k3rn31p4nic/google-translate-api');
-//const translate = require('google-translate-query');
-//const translate = require('@vitalets/google-translate-api');
- //const translate = require('translatte');
-//var translates = require('node-google-translate-skidz');
-//const translate = require("google-translate-api-browser");
-//const translate = require('translatte');
-//const translate = require('google-baidu-translate-api');
-//const translate = require('china-google-translate-api')
 var messengerButton = "<html><head><title>Facebook Messenger Bot</title></head><body><h1>Facebook Messenger Bot</h1>This is a bot based on Messenger Platform QuickStart. For more details, see their <a href=\"https://developers.facebook.com/docs/messenger-platform/guides/quick-start\">docs</a>.<script src=\"https://button.glitch.me/button.js\" data-style=\"glitch\"></script><div class=\"glitchButton\" style=\"position:fixed;top:20px;right:20px;\"></div></body></html>";
 
 // The rest of the code implements the routes for our Express server.
@@ -109,9 +97,6 @@ function receivedMessage(event) {
 //sendplay(senderID);
         sendvideo(senderID);
         break;
-  //  case (messageAttachments):
-  //   sendTextMessage(senderID, "ধন্যবাদ আমাকে ব্যবহার করার জন্য। দয়া করে আমাকে বাংলা বা ইংলিশে এ message করুন যেন আপনাকে অনুবাদ করে পাঠাতে পারি।");
-  //       break;
 case 'pomi': case 'promi':case 'Promi': case 'Pomi': 
 sendphoto(senderID);
 break;
@@ -127,28 +112,6 @@ break;
       sendTranslation(messageText, 'bn', senderID);
       sendTranslation(messageText, 'en', senderID);
       break;
-      //  case(messageText):
-      // typing(senderID);
-      // sendTextMessage(senderID, t);
-      // sendMessage(senderID, x);
-//        translatei({
-//   text: messageText,
-//   source:'auto',
-//   target:'en'
-// }, function (result){
-//   var lol = result.translation;
-//   sendTextMessage(senderID, lol)
-// })
-//  translate({
-//   text: messageText,
-//   source:'auto',
-//   target:'bn'
-// }, function (result){
-//   var lol2 = result.translation;
-//   sendTextMessage(senderID, lol2)
-// })
-//       break;
-
         
       default:
         sendTextMessage(senderID, "বটের আপগ্রেডেশন কাজ চলছে তাই আপনাদের কাছ থেকে কিছু সময় চেয়ে নিচ্ছি ,,,,কিছুক্ষণের মধ্যে বট আগের মত হয়ে যাবে । ততক্ষন পর্যন্ত এখানে মেসেজ করে অনুবাদ করতে পারেন http://m.me/iamsaifulbro । ধন্যবাদ");
@@ -157,14 +120,6 @@ break;
   } else if (messageAttachments) {
     sendTextMessage(senderID, "ধন্যবাদ আমাকে ব্যবহার করার জন্য। দয়া করে আমাকে বাংলা বা ইংলিশে এ message করুন যেন আপনাকে অনুবাদ করে পাঠাতে পারি।");
   }
-  // })
- // .catch(err => {
- // console.error(err);
- //});
-//  })
- // .catch(err => {
-  //console.error(err);
-// });
 }
 
 function receivedPostback(event) {
@@ -234,29 +189,6 @@ function sendTranslation(text, target, senderID){
   var translateRes = result.translation;
   sendTextMessage(senderID, translateRes)
 })
-}
-function sendTextMessage1(recipientId,t) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: t //messageText
-    }
-  };
-
-  callSendAPI(messageData);
-}
-function sendMessage(recipientId,x) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: x //messageText
-}
-};
-   callSendAPI(messageData);
 }
 //video 
 function sendVideo(recipientId){
@@ -484,10 +416,6 @@ webview_height_ratio: "full" } ]
 callSendAPI(messageData);
 }
 
-
-
-
-
 //typing
 function typing(recipientId) {
   var messageData = {
@@ -582,9 +510,7 @@ function broadcastMessage () {
     }
     }
   ]
-};
-  
-  
+}; 
   creativeBroadcastMessage(messageData);
 }
 
@@ -614,24 +540,3 @@ var messageData= {
 };
 creativeBroadcastMessage(messageData);
 }
-
-/*
-translates('আমি তোমার  হব এবং', { to: 'en' }).then(res => {
-  console.log(res.text); // OUTPUT: You are amazing!
-}).catch(err => {
-  console.error(err);
-}); */
-// var translate = require('node-google-translate-skidz');
- 
-/*translate({
-  text: 'text',
-  source: 'es',
-  target: 'en'
-}, function(result) {
-  console.log(result);
-}); */
-// const translatei = require('translate-google-cn');
-//messageText
-//translatei('english', { from: 'auto', to: 'en' })
-//  .then(({ text }) => console.log(text))
-//  .catch(console.error);
